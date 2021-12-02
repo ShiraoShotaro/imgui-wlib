@@ -61,15 +61,13 @@ set_target_properties(imgui-wlib
             "${WLIB_IMGUI_HEADER_FILES}"
 )
 
+add_subdirectory(testproject)
+
 function(wlib_add_source_vsfilter TARGET_NAME)
     get_target_property(_SRCFILES
         ${TARGET_NAME}
             SOURCES
     )
-    if (NOT SOURCE_ROOT STREQUAL "")
-        set(SOURCE_ROOT "\\${SOURCE_ROOT}")
-    endif()
-
     foreach(__source IN ITEMS ${_SRCFILES})
     if (IS_ABSOLUTE "${__source}")
         file(RELATIVE_PATH _source_rel "${CMAKE_CURRENT_SOURCE_DIR}" "${__source}")
@@ -83,9 +81,9 @@ function(wlib_add_source_vsfilter TARGET_NAME)
     if (_source_ext STREQUAL ".cpp")
         string(REPLACE "src" "src" _source_path_msvc "${__source_path_msvc}")
     elseif(_source_ext STREQUAL ".hpp")
-        string(REPLACE "..\\include\\imgui" "src" _source_path_msvc "${__source_path_msvc}")
+        string(REPLACE "include" "src" _source_path_msvc "${__source_path_msvc}")
     elseif(_source_ext STREQUAL ".h")
-        string(REPLACE "..\\include\\imgui" "src" _source_path_msvc "${__source_path_msvc}")
+        string(REPLACE "include" "src" _source_path_msvc "${__source_path_msvc}")
     else()
         message(FATAL_ERROR "Unknown file extension. ${_source_rel}")
     endif()
