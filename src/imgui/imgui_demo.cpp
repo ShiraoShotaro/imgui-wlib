@@ -1,3 +1,4 @@
+// clang-format off
 // dear imgui, v1.86 WIP
 // (demo code)
 
@@ -76,7 +77,7 @@ Index of this file:
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "imgui.h"
+#include "imgui/imgui.h"
 #ifndef IMGUI_DISABLE
 
 // System includes

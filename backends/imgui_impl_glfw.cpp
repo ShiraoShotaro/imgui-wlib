@@ -1,3 +1,4 @@
+// clang-format off
 // dear imgui: Platform Backend for GLFW
 // This needs to be used along with a Renderer (e.g. OpenGL3, Vulkan, WebGPU..)
 // (Info: GLFW is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan graphics context creation, etc.)
@@ -46,7 +47,7 @@
 //  2017-08-25: Inputs: MousePos set to -FLT_MAX,-FLT_MAX when mouse is unavailable/missing (instead of -1,-1).
 //  2016-10-15: Misc: Added a void* user_data parameter to Clipboard function handlers.
 
-#include "imgui.h"
+#include "imgui/imgui.h"
 #include "imgui_impl_glfw.h"
 
 // GLFW

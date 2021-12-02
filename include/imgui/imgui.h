@@ -1,3 +1,4 @@
+// clang-format off
 // dear imgui, v1.86 WIP
 // (headers)
 
