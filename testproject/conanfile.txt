@@ -1,0 +1,14 @@
+# cd build
+# conan install ../testproject --build=missing
+# conan install ../testproject --build=missing -s build_type=Debug
+
+[requires]
+glew/2.2.0
+glfw/3.3.5
+
+[generators]
+cmake_find_package
+cmake_paths
+
+[options]
+*:shared = False
